@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+        <table>
+            <tr>
+                <td>ID</td>
+                <td>Nome</td>
+                <td>Número de Funcionários</td>
+                <td>Número de Projetos</td>
+            </tr>
+            <tr>
+            {% for departamento in departamentos %}
+            <tr>
+                <td>{{ departamento.id }}</td>
+                <td>{{ departamento.nome }}</td>
+                <td>{{ departamento.numero_funcionarios }}</td>
+                <td>{{ departamento.numero_projetos }}</td>
+            </tr>
+            {% endfor %}
+            
+        </table>
+{% endblock %}

@@ -1,3 +1,4 @@
+from io import IncrementalNewlineDecoder
 from django.db import models
 
 # Classe de departamento
@@ -8,8 +9,8 @@ class Departamento(models.Model):
     numero_funcionarios = models.IntegerField(default=0) # Quantidade de funcionários do departamento
 
     # Construtor da classe
-    def __init__(self, nome):
-        self.nome = nome
+    #def __init__(self, nome):
+    #    self.nome = nome
     
     def __str__(self):
         return self.nome

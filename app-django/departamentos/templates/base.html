@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>{{ titulo }}</title>
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <header>Sistema de Gerenciamento Empresarial</header>
+    <div id="barra-lateral">
+        <h1>Navegação</h1>
+        <br>
+        <a href="#">Departamentos</a><br>
+        <a href="#">Funcionários</a><br>
+        <a href="#">Projetos</a>
+    </div>
+    <div id="conteudo-principal">
+        {% block body %}{% endblock %}
+    </div>
+</body>
+</html>

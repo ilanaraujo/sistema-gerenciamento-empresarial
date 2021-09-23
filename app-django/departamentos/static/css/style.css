@@ -1,0 +1,24 @@
+p {
+    color: red;
+}
+
+#barra-lateral {
+    width: 20%;
+    height: 100%;
+    background-color: gray;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+#conteudo-principal {
+    margin-left: 20%;
+}
+
+table, th, td {
+    border: 1px solid black;
+  }
+
+h1 {
+    text-align: center;
+}
