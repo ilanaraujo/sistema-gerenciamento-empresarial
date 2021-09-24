@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div style="margin-left: 15%;">
+    <form method="POST">{% csrf_token %}
+        <label for="nome">Nome</label>
+        <li name="nome" class="caixa-texto-form">{{ form.nome }}</li>
+        <br>
+        <label for="nome">Nome</label>
+        <li name="nome" class="caixa-texto-form">{{ form.cpf }}</li>
+        <br>
+        <label for="nome">Nome</label>
+        <li name="nome" class="caixa-texto-form">{{ form.rg }}</li>
+        <br>
+        <label for="nome">Nome</label>
+        <li name="nome" class="caixa-texto-form">{{ form.sexo }}</li>
+        <br>
+        <label for="nome">Nome</label>
+        <li name="nome" class="caixa-texto-form">{{ form.data_nascimento }}</li>
+        <br>
+        <label for="nome">Nome</label>
+        <li name="nome" class="caixa-texto-form">{{ form.possui_habilitacao }}</li>
+        <br>
+        <label for="nome">Nome</label>
+        <li name="nome" class="caixa-texto-form">{{ form.salario }}</li>
+        <br>
+        <label for="nome">Nome</label>
+        <li name="nome" class="caixa-texto-form">{{ form.carga_horaria_semanal }}</li>
+        <br>
+        <label for="nome">Nome</label>
+        <li name="nome" class="caixa-texto-form">{{ form.departamento }}</li>
+        <br>
+        <br>
+        <button type="submit">Criar Departamento</button>
+    </form>
+</div>
+{% endblock %}

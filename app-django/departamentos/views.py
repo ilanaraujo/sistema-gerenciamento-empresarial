@@ -7,11 +7,11 @@ from .models import Departamento
 def index(request):
     departamentos = Departamento.objects.order_by('id')
     context = {'titulo' : 'Departamentos', 'departamentos' : departamentos}
-    return HttpResponse(render(request, 'index.html', context))
+    return HttpResponse(render(request, 'lista_departamentos.html', context))
 
 # Cria um novo departamento
 def criar(request):
-    context = {'titulo' : 'Novo Departamento'}
+    context = {'titulo' : 'Criar Departamento'}
     if request.method == 'POST':
         form = DepartamentoForm(request.POST)
         if form.is_valid():
@@ -21,8 +21,8 @@ def criar(request):
         return HttpResponse("Erro ao salvar o dpto")
     else:
         form = DepartamentoForm()
-        context = {'form' : form}
-        return HttpResponse(render(request, 'criar.html', context))
+        context['form'] = form
+        return HttpResponse(render(request, 'criar_departamento.html', context))
 
 # Fecha o departamento
 def remover(request, id_departamento):
@@ -32,7 +32,7 @@ def remover(request, id_departamento):
 # Exibe detalhes sobre um departamento
 def detalhes(request, id_departamento):
     context = { 'id_dpto' : id_departamento}
-    return render(request, 'teste.html', context)
+    return render(request, 'detalhes_departamento.html', context)
 
 # Atualiza as informações do departamento
 def atualizar(request, id_departamento):

@@ -1,5 +1,4 @@
 from django.db import models
-from departamentos.models import Departamento
 
 class Funcionario(models.Model):
     id = models.IntegerField(primary_key=True, editable=False)
@@ -9,20 +8,9 @@ class Funcionario(models.Model):
     sexo = models.CharField(max_length=10)
     data_nascimento = models.DateField(blank=False)
     possui_hailitacao = models.BooleanField()
-    valor_salario = models.FloatField(blank=False)
+    salario = models.FloatField(blank=False)
     carga_horaria_semanal = models.IntegerField(blank=False)
-    id_departamento = models.ForeignKey(Departamento.id, blank=False) # Departamento ao qual o funcionário pertence
-
-    # Construtor da classe
-    def __init__(self, nome, cpf, rg, sexo, data_nascimento, possui_habilitacao, salario, carga_horaria_semanal):
-        self.nome = nome
-        self.cpf = cpf
-        self.rg = rg
-        self.sexo = sexo
-        self.data_nascimento = data_nascimento
-        self.possui_habilitacao = possui_habilitacao
-        self.salario = salario
-        self.carga_horaria_semanal = carga_horaria_semanal
+    departamento = models.ForeignKey('departamentos.Departamento', blank=False, null=True, on_delete=models.SET_NULL) # Departamento ao qual o funcionário pertence
 
     def altera_nome(self, novo_nome):
         self.nome = novo_nome

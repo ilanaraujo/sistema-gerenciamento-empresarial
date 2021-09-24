@@ -1,13 +1,12 @@
 {% extends 'base.html' %}
-
-
 {% block body %}
         <table>
             <tr>
                 <td>ID</td>
-                <td>Nome</td>
+                <td>Nome do Departamento</td>
                 <td>Número de Funcionários</td>
                 <td>Número de Projetos</td>
+                <td>Opções</td>
             </tr>
             <tr>
             {% for departamento in departamentos %}
@@ -16,8 +15,15 @@
                 <td>{{ departamento.nome }}</td>
                 <td>{{ departamento.numero_funcionarios }}</td>
                 <td>{{ departamento.numero_projetos }}</td>
+                <td>
+                    <a href="detalhes/{{ departamento.id }}">Detalhes</a>
+                </td>
             </tr>
             {% endfor %}
-            
+            <br>
+            <br>
         </table>
+        <br>
+        <br>
+        <a href="/departamento/criar">Criar</a>
 {% endblock %}
